@@ -1,4 +1,3 @@
-
 body{
     margin:0;
     padding: 0;
@@ -22,46 +21,64 @@ main{
 section{
     margin-top: 5vh;
     font-family: 'Plus Jakarta Sans', sans-serif;
+    justify-content: center;
     display: flex;
-    width: 60%;
+    width: 55%;
     flex-direction: column;
 }
 
 .titulo>h1{
     margin-left: 10vh;
     font-size: clamp(40px, 2vw, 60px);
-   /* font-size: 50px; /*60px*/
 }
 
-
+/* 🔹 Ajuste: que la caja de contacto tenga misma altura que el formulario */
 .caja_contacto{
     display: flex;
     flex-direction: column;
-   background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(50px);
     margin-top: 12vh;
+    border-radius: 12px;
+    padding: 20px;
 }
-
-
 
 .direccion_wsp, .correo_ig {
     color: white;
     display: flex;
     justify-content: space-around;
     align-items: flex-start; 
+    flex: 1;
 }
 
 h3{
+   font-size: 1.5rem; /* títulos más grandes */
+    font-weight: 600;
     color: #FF9950;
+    margin-bottom: 8px;
+}
+
+.caja_contacto p {
+    font-size: 1.2rem;  /* igual que la base */
+    line-height: 1.6;   /* mejora la lectura */
+    color: #ffffff;
 }
 
 aside {
   display: flex;
   justify-content: center;   
   align-items: center;       
-  width: 40%;
+  width: 45%;
 }
 
+/* 🔹 Hacemos que section y aside tengan alturas iguales */
+main > section, main > aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Espaciado de texto */
 .dir-text, .ig-text{
     padding-left: 20px;
 }
@@ -73,47 +90,48 @@ aside {
     padding-left: 24px;
 }
 
-
+/* 🔹 Formulario */
 form{
-   width: 75%;
-  height: 74%; 
+  width: 75%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 26px;
   justify-content: center;
-
+  margin-top: 20px; 
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(50px);
- 
-
-  padding: 20px 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 50px;
+  padding-top: 50px;
   border-radius: 12px;
 
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+/* 🔹 Aumentar tamaño y espacio de labels */
 label{
     color: white;
-    font-size: 2vh;
+    font-size: 2.3vh;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
 }
-textarea{
+
+textarea, input{
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: white;
     background-color: #282525;
-     border: solid 1px white;
-     border-radius: 10px;
-    
-}
-input{
-    color: rgb(255, 253, 248);
-    background-color: #282525 ;
     border: solid 1px white;
-    padding: 8px;
     border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
 }
+
 button{
     background-color: #FF9950;
     border: solid 1px white;
-    padding: 10px;
+    padding: 12px;
     font-size: 20px;
     border-radius: 10px;
     cursor: pointer;
@@ -121,72 +139,52 @@ button{
 
 h3>img{
     vertical-align: middle;
-    width: 20px;
-   
+    width: 25px;
 }
-
 
 footer{
-   
     background-color: #030303;
 }
+
 button:hover {
   background-color: #ffae70;
 }
 
-
+/* 🔹 Responsivo */
 @media (max-width: 1024px) {
-    /* Ajustes para tabletas */
-    
     .titulo > h1 {
-        /* Tamaño un poco más pequeño en tabletas */
         font-size: clamp(25px, 4vw, 50px);
         margin-left: 3vw;
     }
-    
     .caja_contacto {
         margin-top: 5vh;
     }
-
 }
 
 @media (max-width: 768px) {
-    /* Ajustes para móviles */
-
     body {
-       
         min-height: auto; 
     }
-    
-   
     main {
         flex-direction: column; 
         min-height: auto; 
         padding: 10px;
     }
-    
-  
     section, aside {
         width: 100%;
         margin-top: 0;
         padding: 10px 0;
     }
-    
-    /* 3. Ajustamos el Título */
     .titulo > h1 {
         margin-left: 0; 
         text-align: center;
         font-size: clamp(20px, 8vw, 36px);
     }
-    
-    /* 4. Hacemos la caja de contacto más pequeña y centrada */
     .caja_contacto {
         margin-top: 3vh;
         margin-left: 5vw;
         margin-right: 5vw;
     }
-
-    
     .direccion_wsp, .correo_ig {
         flex-direction: column; 
         justify-content: flex-start;
@@ -194,10 +192,8 @@ button:hover {
         gap: 15px; 
         padding: 15px 10%; 
     }
-    
-    /* 6. Formulario ocupa casi todo el ancho */
     aside {
-        padding-bottom: 30px; /* Separación antes del footer */
+        padding-bottom: 30px;
     }
     form {
         width: 90%; 
@@ -205,4 +201,3 @@ button:hover {
         padding: 15px;
     }
 }
-
