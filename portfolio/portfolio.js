@@ -53,8 +53,8 @@ function openLightbox(index, images) {
 function updateLightboxImage() {
     const img = currentImages[currentImageIndex];
     lightboxImage.src = img.src;
-    lightboxImage.alt = img.alt;
-    lightboxCaption.textContent = img.alt;
+    lightboxImage.alt = '';
+    lightboxCaption.textContent = '';
 }
 
 // Función para cerrar el lightbox
@@ -113,4 +113,44 @@ document.addEventListener('keydown', (e) => {
     } else if (e.key === 'ArrowRight') {
         showNextImage();
     }
+});
+
+// Lazy Loading - Carga dinámica de imágenes al hacer scroll
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            const galleryItem = img.closest('.gallery-item');
+            
+            // Añadir clase para animación de aparición
+            galleryItem.classList.add('fade-in');
+            
+            // Dejar de observar esta imagen
+            observer.unobserve(img);
+        }
+    });
+}, {
+    root: null,
+    rootMargin: '50px',
+    threshold: 0.1
+});
+
+// Observar todas las imágenes
+function observeImages() {
+    const images = document.querySelectorAll('.gallery-item img');
+    images.forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+
+// Iniciar observación
+observeImages();
+
+// Re-observar imágenes cuando cambia de categoría
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        setTimeout(() => {
+            observeImages();
+        }, 100);
+    });
 });
