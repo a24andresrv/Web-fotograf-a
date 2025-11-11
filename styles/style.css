@@ -4,10 +4,11 @@ body {
   background: linear-gradient(to bottom,#3a3837, #8b652e);
   margin: 0;
   padding: 0;
+  /* CAMBIO CLAVE: Permite que los elementos se apilen verticalmente */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* 👈 Añadir */
   min-height: 100vh;
+  /* Eliminar justify-content y align-items para el body */
 }
 
 /* Contenedor principal */
