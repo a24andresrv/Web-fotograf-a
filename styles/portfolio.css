@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(to top, #7E5C2C 0%, #000000 100%);
+    background: linear-gradient(to bottom,#3a3837, #8b652e);
     color: #fff;
     min-height: 100vh;
 }

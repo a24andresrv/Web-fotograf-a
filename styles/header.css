@@ -1,6 +1,6 @@
    body {
   margin: 0;
-  background-color: #121212; /* fondo oscuro para resaltar el blanco */
+
   font-family: 'Poppins', sans-serif;
 }
 
@@ -14,7 +14,7 @@
   justify-content: space-between; /* logo a la izquierda, menú a la derecha */
   align-items: center;
   padding: 15px 40px;
-  background-color: #1c1c1c;
+  background-color: #030303;
   box-sizing: border-box;
   z-index: 1000; /* para que quede por encima del resto del contenido */
 }
