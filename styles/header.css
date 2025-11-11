@@ -1,0 +1,74 @@
+   body {
+  margin: 0;
+  background-color: #121212; /* fondo oscuro para resaltar el blanco */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Barra de navegación */
+.topBar {
+  position: fixed; /* se mantiene arriba al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100%; /* ocupa todo el ancho */
+  display: flex;
+  justify-content: space-between; /* logo a la izquierda, menú a la derecha */
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #1c1c1c;
+  box-sizing: border-box;
+  z-index: 1000; /* para que quede por encima del resto del contenido */
+}
+
+/* Espacio para que el contenido no quede debajo del menú fijo */
+body::before {
+  content: "";
+  display: block;
+  height: 80px; /* igual o ligeramente mayor que la altura de la barra */
+}
+
+/* Logo */
+.topBar img {
+  height: 75px;
+  width: auto;
+}
+
+/* Lista de navegación */
+.topBar ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enlaces */
+.topBar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Subrayado animado */
+.topBar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background-color: orange;
+  transition: width 0.3s ease;
+}
+
+/* Hover y activo */
+.topBar a:hover::after,
+.topBar a.active::after {
+  width: 100%;
+}
+
+.topBar a:hover {
+  color: orange;
+}
