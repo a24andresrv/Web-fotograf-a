@@ -43,3 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(error => console.error("Error al cargar el Footer:", error));
     }
 });
+
+
+ const formulario = document.querySelector(".formularioo");
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault(); // 👈 Evita que la página se recargue
+
+  const nombre = document.querySelector("#nombre").value;
+  const email = document.querySelector("#email").value;
+  const telefono = document.querySelector("#telefono").value;
+  const mensaje = document.querySelector("#mensaje").value;
+
+  console.log({ nombre, email, telefono, mensaje });
+  // Aquí podrías enviar los datos con fetch(), etc.
+});
