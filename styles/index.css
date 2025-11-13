@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #000;
+}
+
+/* Sección principal con imagen de fondo */
+.hero {
+    margin-top: 2vh;
+    position: relative;
+    height: 97vh;
+    background: url('../img/boda2.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+/* Contenido del texto */
+.hero-content {
+    position: relative;
+    max-width: 700px;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #ff8c32; /* tono dorado/naranja elegante */
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ddd;
+}
