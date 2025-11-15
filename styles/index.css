@@ -7,7 +7,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     color: white;
-    background-color: #000;
+    background-color: #1E1E1E;
 }
 
 /* Sección principal con imagen de fondo */
@@ -15,11 +15,12 @@ body {
     margin-top: 2vh;
     position: relative;
     height: 97vh;
-    background: url('../img/boda2.png') no-repeat center center/cover;
+    background: url('../img/Bodaa.png') no-repeat center center/cover;
     display: flex;
     justify-content: start;
     align-items: end;
-    text-align: left;
+    text-align: left; 
+    filter:contrast(1);
 }
 
 /* Contenido del texto */
