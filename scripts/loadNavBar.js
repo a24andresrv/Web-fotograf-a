@@ -44,16 +44,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+ const formulario = document.querySelector('.formularioo');
+    const mensajeExito = document.getElementById('mensajeExito');
 
- const formulario = document.querySelector(".formularioo");
-formulario.addEventListener("submit", (e) => {
-  e.preventDefault(); // 👈 Evita que la página se recargue
+    formulario.addEventListener('submit', function(e) {
+        e.preventDefault(); // evita que se recargue la página
 
-  const nombre = document.querySelector("#nombre").value;
-  const email = document.querySelector("#email").value;
-  const telefono = document.querySelector("#telefono").value;
-  const mensaje = document.querySelector("#mensaje").value;
+        // Validación simple
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensaje = document.getElementById('mensaje').value.trim();
 
-  console.log({ nombre, email, telefono, mensaje });
-  // Aquí podrías enviar los datos con fetch(), etc.
-});
+        if(nombre && email && mensaje) {
+            // Mostrar mensaje
+            mensajeExito.style.display = 'block';
+
+            // Desaparece después de 3 segundos
+            setTimeout(() => {
+                mensajeExito.style.display = 'none';
+            }, 3000);
+
+            // Limpiar formulario
+            formulario.reset();
+        } else {
+            alert('Por favor completa todos los campos requeridos.');
+        }
+    });
