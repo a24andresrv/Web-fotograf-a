@@ -9,39 +9,42 @@
 .main-footer {
     background-color: var(--color-fondo);
     color: var(--color-texto-claro);
-    padding: 40px 60px;
+    padding: 40px 60px 0px 0px;
     font-family: sans-serif;
     line-height: 1.5;
 }
 
 .footer-content {
-    display: flex; /* Alineación horizontal de las 4 columnas */
-    justify-content: space-between; 
+    display: flex; 
+    justify-content: space-around;
     max-width: 1300px;
     margin: 0 auto;
 }
 
 .footer-column {
-    flex-basis: 22%; /* Asigna un ancho base a cada columna */
-    padding: 0 10px;
+    flex-basis: 22%; 
+    padding: 0 21px;
 }
 
-/* --- REGLAS CLAVE PARA ALINEACIÓN HORIZONTAL --- */
+
 .title-with-links {
-    display: flex;        /* 👈 ACTIVA FLEXBOX AQUÍ */
+    display: flex;        
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;   
     gap: 15px;
 }
 
+
+
 .column-title {
-    /* Estilo del título con línea naranja */
+   
     border-bottom: 2px solid var(--color-naranja); 
     display: inline-block; 
     padding-bottom: 5px;
     margin-right: 0; 
     margin-top: 0;
+    color: #FF9950;
 }
 
 .brand-name{
@@ -49,9 +52,9 @@
     color: var(--color-naranja);
 }
 
-/* Esto asegura que los enlaces vayan en línea, separándose por margen izquierdo */
+
 .title-with-links a {
-    display: inline; /* Ya que el contenedor es Flex, esto ayuda */
+    display: inline; 
     text-decoration: none;
     margin-left: 15px; 
     white-space: nowrap; 
@@ -60,14 +63,14 @@
 
 .footer-column.logo-column img {
 
-    width: 400px; 
+    width: 350px; 
     height: auto; 
     
 }
 
-/* El resto del CSS para Contacto y enlaces de abajo sigue siendo importante: */
+
 .link-below-title {
-    display: block !important; /* Fuerza a Retratos/Servicios a ir en su propia línea */
+    display: block !important; 
     margin-left: 0; 
     margin-bottom: 5px;
 }
@@ -75,11 +78,15 @@
     display: block;
     margin-bottom: 3px;
     line-height: 1.3;
+    text-align: center;
     gap: 50px;
 }
 .social-links{
     display: flex;
-    gap: 10px;
+    gap: 15px;
+}
+.social-text{
+    color: #FF9950;
 }
 
 .social-links a {
@@ -89,7 +96,7 @@
 .separacion{
     align-items: center;
     display: flex;
-    gap: 15px;
+    gap: 20px;
     margin-left: 50px;
-    margin-top: 50px;
+    margin-top: 75px;
 }
