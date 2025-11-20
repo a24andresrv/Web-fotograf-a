@@ -45,6 +45,7 @@ section{
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(50px);
     margin-top: 12vh;
+    margin-left: 10vh;
     border-radius: 12px;
     padding: 20px;
 }
